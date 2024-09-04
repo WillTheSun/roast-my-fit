@@ -13,7 +13,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development false') {
+    if (process.env.NODE_ENV === 'development') {
       setRoast(defaultRoast);
     }
   }, []);
