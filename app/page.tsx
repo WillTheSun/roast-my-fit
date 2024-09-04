@@ -13,7 +13,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development false') {
       setRoast(defaultRoast);
     }
   }, []);
@@ -78,7 +78,7 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-orange-500 flex items-center">
             <FaFire className="mr-2" /> The Roast:
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed">{roast}</p>
+          <p className="text-base sm:text-lg leading-relaxed whitespace-pre-wrap">{roast}</p>
         </div>
       )}
     </main>

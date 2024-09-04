@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         {
           role: "user",
           content: [
-            { type: "text", text: "Roast this outfit." },
+            { type: "text", text: "Roast this outfit. Make it funny, light-hearted, and a little savage, while giving some useful fashion feedback. Use paragaphs/spacing, and a few emojis." },
             {
               type: "image_url", image_url: {
                 url: processedImageBase64
@@ -41,6 +41,8 @@ export async function POST(request: Request) {
     });
 
     const roast = response.choices[0].message.content;
+    
+    console.log(roast);
 
     return NextResponse.json({ roast });
   } catch (error) {
