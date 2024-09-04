@@ -8,10 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "electric-blue": "#1E90FF",
+        "neon-pink": "#FF1493",
+        "charcoal": "#333333",
+      },
+      fontFamily: {
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
+      },
+      backgroundColor: {
+        "electric-blue-10": "rgba(30, 144, 255, 0.1)",
+      },
+      textColor: {
+        "neon-pink": "#FF1493",
       },
     },
   },

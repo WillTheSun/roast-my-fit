@@ -26,14 +26,22 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageUpload }) => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: {'image/*': []} });
 
   return (
-    <div {...getRootProps()} className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer h-80 flex items-center justify-center">
+    <div 
+      {...getRootProps()} 
+      className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer transition-all duration-300 hover:border-orange-500 hover:bg-orange-50 h-40 sm:h-64 flex items-center justify-center"
+    >
       <input {...getInputProps()} />
       {previewUrl ? (
         <img src={previewUrl} alt="Uploaded image" className="max-w-full max-h-full object-contain" />
-      ) : isDragActive ? (
-        <p className="text-xl">Drop the image here ...</p>
       ) : (
-        <p className="text-xl">Drag 'n' drop an image here, or click to select one</p>
+        <div>
+          <p className="text-base sm:text-lg mb-2">
+            {isDragActive ? "Drop the image here" : "Tap to select an image"}
+          </p>
+          <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">
+            Or drag and drop here
+          </p>
+        </div>
       )}
     </div>
   );

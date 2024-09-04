@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
