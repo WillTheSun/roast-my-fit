@@ -37,7 +37,8 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to get roast');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to get roast');
       }
 
       const data = await response.json();
