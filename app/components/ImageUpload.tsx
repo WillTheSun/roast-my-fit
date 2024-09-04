@@ -12,6 +12,13 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageUpload }) => {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
+    const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+
+    if (file.size > maxSize) {
+      alert('File size exceeds 10MB limit. Please choose a smaller image.');
+      return;
+    }
+
     const reader = new FileReader();
 
     reader.onload = (event) => {

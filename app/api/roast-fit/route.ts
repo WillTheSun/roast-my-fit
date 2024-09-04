@@ -16,10 +16,10 @@ export async function POST(request: Request) {
   try {
     // Decode base64 image
     const imageBuffer = Buffer.from(image.split(',')[1], 'base64');
-    
+
     // Resize and limit the image
     const processedImageBuffer = await resizeAndLimitImage(imageBuffer);
-    
+
     // Convert processed image back to base64
     const processedImageBase64 = `data:image/jpeg;base64,${processedImageBuffer.toString('base64')}`;
 
@@ -29,7 +29,13 @@ export async function POST(request: Request) {
         {
           role: "user",
           content: [
-            { type: "text", text: "Roast this outfit. Make it funny, light-hearted, and a little savage, while giving some useful fashion feedback. Use paragaphs/spacing, and a few emojis." },
+            {
+              type: "text",
+              text: "Roast this outfit. Make it funny, light-hearted, and a little savage.\n" +
+                    "Give a bit of useful fashion feedback.\n" +
+                    "Use paragraphs/spacing, and a few emojis.\n" +
+                    "150 word response."
+            },
             {
               type: "image_url", image_url: {
                 url: processedImageBase64
@@ -38,10 +44,11 @@ export async function POST(request: Request) {
           ],
         },
       ],
+      max_tokens: 500, // Input token limit
     });
 
     const roast = response.choices[0].message.content;
-    
+
     console.log(roast);
 
     return NextResponse.json({ roast });
