@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-neutral-100 text-gray-800 font-roboto">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-neutral-50 text-gray-800 font-roboto">
       <h1 className="text-4xl sm:text-4xl md:text-5xl bold pt-4 pb-4 mb-4 sm:mb-8 font-montserrat text-orange-500 flex items-center text-center">
         Roast My Fit <FaFire className="ml-2" />
       </h1>
