@@ -15,7 +15,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageUpload }) => {
     const maxSize = 10 * 1024 * 1024; // 10MB in bytes
 
     if (file.size > maxSize) {
-      alert('File size exceeds 10MB limit. Please choose a smaller image.');
+      window.alert('File size exceeds 10MB limit. Please choose a smaller image.');
       return;
     }
 
