@@ -34,7 +34,7 @@ export async function POST(request: Request) {
               text: "Roast this outfit. Make it funny, light-hearted, and a little savage.\n" +
                     "Give a bit of useful fashion feedback.\n" +
                     "Use paragraphs/spacing, and a few emojis.\n" +
-                    "150 word response."
+                    "<120 word response."
             },
             {
               type: "image_url", image_url: {
